@@ -1,0 +1,51 @@
+{
+  "name": "cluster-to-winston",
+  "version": "1.0.0",
+  "description": "Winston extension for Node.js clustering",
+  "main": "index.js",
+  "files": [
+    "/lib",
+    "/badges"
+  ],
+  "scripts": {
+    "test": "jest",
+    "test-ci": "jest --ci --coverage"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "index.js",
+      "lib/**/*.js"
+    ],
+    "coverageReporters": [
+      "clover",
+      "json",
+      "lcov",
+      "text",
+      "json-summary"
+    ],
+    "verbose": false,
+    "testPathIgnorePatterns": [
+      "/node_modules/"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/do-/node-cluster-to-winston.git"
+  },
+  "keywords": [
+    "winston",
+    "cluster"
+  ],
+  "author": "Dmitry Ovsyanko",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/do-/node-cluster-to-winston/issues"
+  },
+  "peerDependencies": {
+    "winston": "^3.17.0"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
+  },
+  "homepage": "https://github.com/do-/node-cluster-to-winston#readme"
+}

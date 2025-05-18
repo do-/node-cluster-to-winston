@@ -11,7 +11,7 @@ const winston = require ('winston')
 require ('cluster-to-winston') // no typo here
 
 const logger = winston.createLogger ({
-  transports:       //... for primary process: e. g. DailyRotateFile
+  transports:       //... for the primary process: e. g. DailyRotateFile
   format:           //... for both primary and workers
 })
   .enableCluster ({ // all the necessary setup is done here

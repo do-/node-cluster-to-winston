@@ -41,7 +41,7 @@ What `.enableCluster ()` does, depends on the context:
   * registers this method as a handler for `cluster`' s `'message'` event (unless prohibited by setting `listen: false` for advanced use);
 * in a worker process, it forcibly replaces all `transports` with a single, that stores the final `MESSAGE` as the magic `WorkerProcessLogMessage` and publishes the info object as a `'message'` event.
 
-In the sample code above, the `logger` looks created once, before branching and forking. But because of the way `cluster.fork` and `require` work, effectively, `.enableCluster ()` is called with final `cluster.isWorker` values, so `Logger` instances will be properly initialized in each process. And, unlike in [`winston-cluster`](https://www.npmjs.com/package/winston-cluster), the logger set up at application start can be then used everywhere, in a transparent way. Moreover, `format`ting is not postponed, so [Timestamp](https://github.com/winstonjs/logform?tab=readme-ov-file#timestamp)s in workers are made immediately.
+In the sample code above, the `logger` looks created once, before branching and forking. But because of the way `cluster.fork` and `require` work, effectively, `.enableCluster ()` is called with final `cluster.isWorker` values, so `Logger` instances will be properly initialized in each process. And, unlike in [`winston-cluster`](https://www.npmjs.com/package/winston-cluster), the logger set up at application start can be then used everywhere, in a transparent way. Moreover, `format`ting is not postponed, so [Timestamp](https://github.com/winstonjs/logform?tab=readme-ov-file#timestamp)s in workers are applied immediately.
 
 # Notes
 
